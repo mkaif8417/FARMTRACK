@@ -5,6 +5,7 @@
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* ================= NAVBAR ================= */
 .navbar {
   display: flex;
   align-items: center;
@@ -15,8 +16,10 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  border-radius: 4px;
 }
 
+/* Brand */
 .nav-brand {
   color: #f4a261;
   font-size: 24px;
@@ -24,6 +27,7 @@
   letter-spacing: 1px;
 }
 
+/* Links (desktop) */
 .nav-links {
   display: flex;
   gap: 24px;
@@ -35,15 +39,59 @@
   font-size: 15px;
   padding: 6px 12px;
   border-radius: 6px;
- transition: background-color 0.3s;}
+  transition: background-color 0.3s;
+}
 
 .nav-links a:hover {
-    background-color: #1b4332;
-
+  background-color: #1b4332;
 }
 
 .nav-links a.active {
   background: #f4a261;
   color: #1b4332;
   font-weight: bold;
+}
+
+/* ================= HAMBURGER ICON ================= */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* hide links initially */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #2d6a4f;
+    padding: 15px 0;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* when menu open */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px;
+    width: 100%;
+  }
 }

@@ -1,17 +1,43 @@
 <nav class="navbar">
+
+  <!-- Brand -->
   <div class="nav-brand">
     🌾 FarmTrack
   </div>
-  <div class="nav-links">
-    <a routerLink="/" routerLinkActive="active" 
-       [routerLinkActiveOptions]="{exact: true}">🏠 Home</a>
-    <a routerLink="/dashboard" routerLinkActive="active">📊 Dashboard</a>
-    <a routerLink="/camera" routerLinkActive="active">📸 Camera</a>
-    <a routerLink="/crops" routerLinkActive="active">🌱 Crops</a>
-    <a routerLink="/map" routerLinkActive="active">🗺️ Map</a>
-    <a routerLink="/about" routerLinkActive="active">📖 About</a>
-    <a routerLink="/contact" routerLinkActive="active">📞 Contact</a>
+
+  <!-- Hamburger icon (mobile only) -->
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
   </div>
+
+  <!-- Navigation Links -->
+  <div class="nav-links" [class.active]="menuOpen">
+
+    <a routerLink="/" routerLinkActive="active"
+       [routerLinkActiveOptions]="{exact: true}"
+       (click)="closeMenu()">🏠 Home</a>
+
+    <a routerLink="/dashboard" routerLinkActive="active"
+       (click)="closeMenu()">📊 Dashboard</a>
+
+    <a routerLink="/camera" routerLinkActive="active"
+       (click)="closeMenu()">📸 Camera</a>
+
+    <a routerLink="/crops" routerLinkActive="active"
+       (click)="closeMenu()">🌱 Crops</a>
+
+    <a routerLink="/map" routerLinkActive="active"
+       (click)="closeMenu()">🗺️ Map</a>
+
+    <a routerLink="/about" routerLinkActive="active"
+       (click)="closeMenu()">📖 About</a>
+
+    <a routerLink="/contact" routerLinkActive="active"
+       (click)="closeMenu()">📞 Contact</a>
+
+  </div>
+
 </nav>
 
+<!-- Page content renders here -->
 <router-outlet></router-outlet>

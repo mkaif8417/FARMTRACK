@@ -9,6 +9,10 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+
+  // 🔥 Hamburger menu state
+  menuOpen = false;
+
   constructor() {
     // Clean up broken photos from localStorage
     const saved = localStorage.getItem('farmtrack_meta');
@@ -17,5 +21,15 @@ export class App {
       const clean = meta.filter((p: any) => p.lat && p.lng);
       localStorage.setItem('farmtrack_meta', JSON.stringify(clean));
     }
+  }
+
+
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
   }
 }

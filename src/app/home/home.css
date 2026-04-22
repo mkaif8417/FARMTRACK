@@ -1,13 +1,20 @@
+/* ================= HERO SECTION ================= */
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600') 
+              url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600')
               center/cover no-repeat;
-  height: 500px;
+
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 700px;
 }
 
 .hero-content h1 {
@@ -19,10 +26,11 @@
 .hero-content p {
   font-size: 18px;
   margin-bottom: 30px;
-  max-width: 600px;
 }
 
+/* Button */
 .btn-primary {
+  display: inline-block;
   background-color: #2d6a4f;
   color: white;
   padding: 14px 28px;
@@ -30,7 +38,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 }
 
 .btn-primary:hover {
@@ -38,22 +46,27 @@
   color: #1b4332;
 }
 
+/* ================= STATS SECTION ================= */
 .stats-section {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 60px 40px;
+  padding: 60px 20px;
   background-color: #f8f9fa;
   flex-wrap: wrap;
 }
 
+/* Cards */
 .stat-card {
   background: white;
   border-radius: 12px;
-  padding: 30px 40px;
+  padding: 25px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  min-width: 180px;
+
+  flex: 1 1 220px;
+  max-width: 260px;
+
   transition: transform 0.3s;
 }
 
@@ -74,4 +87,76 @@
   font-size: 36px;
   font-weight: bold;
   color: #f4a261;
+}
+
+/* ================= MOBILE (<=768px) ================= */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 50vh;
+    padding: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .stats-section {
+    padding: 30px 10px;
+    gap: 15px;
+  }
+
+  .stat-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+}
+
+/* ================= TABLET (769px–1024px) ================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .hero {
+    min-height: 55vh;
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+
+  .stats-section {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+
+  .stat-card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .stat-number {
+    font-size: 30px;
+  }
 }
