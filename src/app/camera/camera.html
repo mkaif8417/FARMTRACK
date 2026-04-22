@@ -1,0 +1,42 @@
+<div class="camera-page">
+  <h1>📸 Field Camera</h1>
+  <p class="subtitle">Capture field photos with GPS coordinates</p>
+
+  <div class="camera-box">
+    <video #video autoplay playsinline class="video-feed"
+      [style.display]="cameraActive ? 'block' : 'none'"></video>
+
+    <div class="placeholder" *ngIf="!cameraActive">
+      <span>📷</span>
+      <p>Camera is off</p>
+    </div>
+
+    <canvas #canvas style="display:none"></canvas>
+  </div>
+
+  <div class="coordinates">
+  📍 Lat: {{ latitude | number:'1.4-4' }} | Lng: {{ longitude | number:'1.4-4' }}
+</div>
+
+  <div class="controls">
+    <button class="btn-green" (click)="startCamera()" 
+      *ngIf="!cameraActive">▶ Start Camera</button>
+    <button class="btn-orange" (click)="capturePhoto()" 
+      *ngIf="cameraActive">📸 Capture Photo</button>
+    <button class="btn-red" (click)="stopCamera()" 
+      *ngIf="cameraActive">⏹ Stop Camera</button>
+  </div>
+
+  <div class="gallery" *ngIf="savedPhotos.length > 0">
+    <h2>📁 Captured Photos</h2>
+    <div class="photo-grid">
+      <div class="photo-card" *ngFor="let photo of savedPhotos">
+        <img [src]="photo.image" alt="Field Photo" />
+        <div class="photo-info">
+         <p>📍 {{ photo.lat | number:'1.4-4' }}, {{ photo.lng | number:'1.4-4' }}</p>
+          <p>🕐 {{ photo.time }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="map-page">
+  <div class="page-header">
+    <h1>🗺️ Field Map</h1>
+    <p>Photos captured from camera will appear as pins on the map</p>
+  </div>
+
+  <div class="empty" *ngIf="photos.length === 0">
+    <p>📸 No photos yet! Go to <strong>Camera</strong> page and capture a field photo!</p>
+  </div>
+
+  <div class="field-list" *ngIf="photos.length > 0">
+    <div class="field-card" *ngFor="let photo of photos">
+      <span class="field-icon">📸</span>
+      <div>
+        <h3>{{ photo.name }}</h3>
+        <p>🕐 {{ photo.time }}</p>
+        <p>📍 {{ photo.lat }}, {{ photo.lng }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+</div>

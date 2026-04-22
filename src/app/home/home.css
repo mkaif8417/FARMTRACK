@@ -1,0 +1,77 @@
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600') 
+              center/cover no-repeat;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #f4a261;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.btn-primary {
+  background-color: #2d6a4f;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #f4a261;
+  color: #1b4332;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 60px 40px;
+  background-color: #f8f9fa;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  min-width: 180px;
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 40px;
+}
+
+.stat-card h3 {
+  color: #2d6a4f;
+  margin: 10px 0;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #f4a261;
+}

@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="nav-brand">
+    🌾 FarmTrack
+  </div>
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active" 
+       [routerLinkActiveOptions]="{exact: true}">🏠 Home</a>
+    <a routerLink="/dashboard" routerLinkActive="active">📊 Dashboard</a>
+    <a routerLink="/camera" routerLinkActive="active">📸 Camera</a>
+    <a routerLink="/crops" routerLinkActive="active">🌱 Crops</a>
+    <a routerLink="/map" routerLinkActive="active">🗺️ Map</a>
+    <a routerLink="/about" routerLinkActive="active">📖 About</a>
+    <a routerLink="/contact" routerLinkActive="active">📞 Contact</a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

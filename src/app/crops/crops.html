@@ -1,0 +1,61 @@
+<div class="crops-page">
+  <div class="page-header">
+    <h1>🌱 Crop Tracker</h1>
+    <button class="btn-green" (click)="showForm = !showForm">
+      {{ showForm ? '✖ Cancel' : '+ Add Crop' }}
+    </button>
+  </div>
+
+  <div class="crop-form" *ngIf="showForm">
+    <h2>Add New Crop</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Crop Name</label>
+        <input [(ngModel)]="newCrop.name" placeholder="e.g. Wheat" />
+      </div>
+      <div class="form-group">
+        <label>Field Name</label>
+        <input [(ngModel)]="newCrop.field" placeholder="e.g. North Field" />
+      </div>
+      <div class="form-group">
+        <label>Field Size (acres)</label>
+        <input [(ngModel)]="newCrop.size" placeholder="e.g. 5" />
+      </div>
+      <div class="form-group">
+        <label>Planting Date</label>
+        <input type="date" [(ngModel)]="newCrop.plantDate" />
+      </div>
+      <div class="form-group">
+        <label>Growth Stage</label>
+        <select [(ngModel)]="newCrop.stage">
+          <option *ngFor="let stage of stages">{{ stage }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Notes</label>
+        <input [(ngModel)]="newCrop.notes" placeholder="Any notes..." />
+      </div>
+    </div>
+    <button class="btn-submit" (click)="addCrop()">✅ Save Crop</button>
+  </div>
+
+  <div class="empty" *ngIf="crops.length === 0">
+    <p>🌾 No crops added yet. Click <strong>+ Add Crop</strong> to start!</p>
+  </div>
+
+  <div class="crop-grid">
+    <div class="crop-card" *ngFor="let crop of crops; let i = index">
+      <div class="crop-header" [style.background]="getStageColor(crop.stage)">
+        <h3>{{ crop.name }}</h3>
+        <span class="stage-badge">{{ crop.stage }}</span>
+      </div>
+      <div class="crop-body">
+        <p>🗺️ Field: <strong>{{ crop.field }}</strong></p>
+        <p>📐 Size: <strong>{{ crop.size }} acres</strong></p>
+        <p>📅 Planted: <strong>{{ crop.plantDate }}</strong></p>
+        <p *ngIf="crop.notes">📝 {{ crop.notes }}</p>
+      </div>
+      <button class="btn-delete" (click)="deleteCrop(i)">🗑 Delete</button>
+    </div>
+  </div>
+</div>

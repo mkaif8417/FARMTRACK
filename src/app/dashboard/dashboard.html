@@ -1,0 +1,92 @@
+<div class="dashboard-page">
+  <div class="dashboard-header">
+    <h1>📊 Farm Dashboard</h1>
+    <p>Welcome back! Here is your farm overview.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card green">
+      <div class="stat-icon">📸</div>
+      <div class="stat-info">
+        <h3>{{ totalPhotos }}</h3>
+        <p>Photos Captured</p>
+      </div>
+    </div>
+    <div class="stat-card orange">
+      <div class="stat-icon">🌱</div>
+      <div class="stat-info">
+        <h3>0</h3>
+        <p>Crops Tracked</p>
+      </div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-icon">🗺️</div>
+      <div class="stat-info">
+        <h3>{{ totalPhotos }}</h3>
+        <p>Fields Mapped</p>
+      </div>
+    </div>
+    <div class="stat-card yellow">
+      <div class="stat-icon">📍</div>
+      <div class="stat-info">
+        <h3>Live</h3>
+        <p>GPS Status</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="recent-photos">
+      <div class="section-header">
+        <h2>📸 Recent Field Photos</h2>
+        <a routerLink="/camera" class="btn-link">View All →</a>
+      </div>
+      <div class="photo-list" *ngIf="recentPhotos.length > 0">
+        <div class="photo-item" *ngFor="let photo of recentPhotos">
+      <img *ngIf="photo.image" [src]="photo.image" alt="Field Photo" />
+<div *ngIf="!photo.image" class="no-image">📷</div>
+          <div class="photo-details">
+            <h4>{{ photo.name }}</h4>
+            <p>📍 {{ photo.lat | number:'1.4-4' }}, {{ photo.lng | number:'1.4-4' }}</p>
+            <p>🕐 {{ photo.time }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="empty" *ngIf="recentPhotos.length === 0">
+        <p>📷 No photos yet! <a routerLink="/camera">Go to Camera</a></p>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <h2>⚡ Quick Actions</h2>
+      <a routerLink="/camera" class="action-card">
+        <span>📸</span>
+        <div>
+          <h4>Capture Field Photo</h4>
+          <p>Take a photo with GPS location</p>
+        </div>
+      </a>
+      <a routerLink="/crops" class="action-card">
+        <span>🌱</span>
+        <div>
+          <h4>Add New Crop</h4>
+          <p>Track a new crop in your field</p>
+        </div>
+      </a>
+      <a routerLink="/map" class="action-card">
+        <span>🗺️</span>
+        <div>
+          <h4>View Field Map</h4>
+          <p>See all your fields on the map</p>
+        </div>
+      </a>
+      <a routerLink="/contact" class="action-card">
+        <span>📞</span>
+        <div>
+          <h4>Contact Support</h4>
+          <p>Get help from our team</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

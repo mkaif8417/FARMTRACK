@@ -1,0 +1,147 @@
+.crops-page {
+  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  color: #2d6a4f;
+}
+
+.btn-green {
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.crop-form {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.crop-form h2 {
+  color: #2d6a4f;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2d6a4f;
+}
+
+.btn-submit {
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  color: #888;
+  font-size: 18px;
+}
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.crop-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white;
+}
+
+.crop-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.crop-header h3 {
+  font-size: 20px;
+}
+
+.stage-badge {
+  background: rgba(255,255,255,0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.crop-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #555;
+}
+
+.btn-delete {
+  width: 100%;
+  background-color: #fff0f0;
+  color: #e63946;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-top: 1px solid #ffe0e0;
+}
+
+.btn-delete:hover {
+  background-color: #e63946;
+  color: white;
+}
